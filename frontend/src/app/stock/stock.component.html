@@ -1,0 +1,17 @@
+<div class="stock-container">
+  <h2>📈 Real-Time Stock/Forex Tracker</h2>
+
+  <label for="symbol-select">Choose Symbol:</label>
+  <select
+    id="symbol-select"
+    [(ngModel)]="selectedSymbol"
+    (change)="onSymbolChange()"
+  >
+    <option *ngFor="let symbol of allSymbols" [value]="symbol">
+      {{ symbol }}
+    </option>
+  </select>
+
+  <canvas baseChart [type]="'line'" [data]="chartData" [options]="chartOptions">
+  </canvas>
+</div>
